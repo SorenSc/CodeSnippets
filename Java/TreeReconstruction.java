@@ -3,12 +3,41 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Stack;
 
+/**
+ * Creates a tree structure based on a list of elements. The elements are an obeservation from a tree
+ * which is orderend preorder, which means that each element knows its position in the preorder list and its
+ * level in the tree.
+ */ 
 public class TreeReconstruction
 {
+
     /**
-     * Creates a tree structure based on a list of AutomatedComponents. The components are an obeservation from a tree
-     * which is orderend preorder, which means that each componentent knows its position in the preorder list and its
-     * level in the tree. Given these information, the algorithm reconstructs a tree structure.
+     * Simulating a reconstruction of the tree. After creating the list of elements in positioned  in preorder, the
+     * tree is reconstructed and its root element is returned.
+     *
+     * The tree original tree looks like the following
+     *
+     *              E1
+     *            /   \
+     *           E2    E3
+     *         /   \
+     *       E4     E5
+     *
+     * @param args
+     */
+    public static void main(String[] args) {
+        Element E1 = new Element(1, 0);
+        Element E2 = new Element(2, 1);
+        Element E3 = new Element(5, 1);
+        Element E4 = new Element(3, 2);
+        Element E5 = new Element(4, 2);
+        List<Element> elements = Arrays.asList(E1, E2, E3, E4, E5);
+
+        Node root = createTree(elements);
+    }
+
+    /**
+     * The algorithm for reconstructing the tree.
      * @param components
      * @return
      */
@@ -87,30 +116,5 @@ public class TreeReconstruction
                 children = new ArrayList<Node>();
             children.add(node);
         }
-    }
-
-    /**
-     * Simulating a reconstruction of the tree. After creating the list of elements in positioned  in preorder, the
-     * tree is reconstructed and its root element is returned.
-     *
-     * The tree original tree looks like the following
-     *
-     *              E1
-     *            /   \
-     *           E2    E3
-     *         /   \
-     *       E4     E5
-     *
-     * @param args
-     */
-    public static void main(String[] args) {
-        Element E1 = new Element(1, 0);
-        Element E2 = new Element(2, 1);
-        Element E3 = new Element(5, 1);
-        Element E4 = new Element(3, 2);
-        Element E5 = new Element(4, 2);
-        List<Element> elements = Arrays.asList(E1, E2, E3, E4, E5);
-
-        Node root = createTree(elements);
     }
 }
