@@ -4,8 +4,8 @@ import java.util.List;
 import java.util.Stack;
 
 /**
- * Creates a tree structure based on a list of elements. The elements are an obeservation from a tree
- * which is orderend preorder, which means that each element knows its position in the preorder list and its
+ * Creates a tree structure based on a list of elements. The elements are an observation from a tree
+ * which is ordered in preorder, which means that each element knows its position in the preorder list and its
  * level in the tree.
  */ 
 public class TreeReconstruction
